@@ -12,5 +12,14 @@ public class java_2 {
         // char - 2 bytes
         // boolean - 1 bytes
 
+
+        /****PREMETIVE DATATYPE ****/
+        byte age = 30;
+        int phone = 1234567890;
+        long phone2 = 1234567890987654321L;
+        float pi = 3.14F;
+        char letter = '@';
+        boolean isAdult = true;
+
     }
 }
