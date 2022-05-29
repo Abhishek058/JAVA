@@ -20,7 +20,11 @@ public class java_4 {
 
         System.out.println(studDetail[1]);
         Arrays.sort(studDetail);
-        //after sorting
+        // after sorting
         System.out.println(studDetail[1]);
+
+        int[] marks = { 88, 95, 87 };// 1D Array
+        int[][] finalmarks = {{ 88, 95, 87}, { 90, 87, 98}};// 2D Array
+        System.out.println(finalmarks[1][0]);
     }
 }
