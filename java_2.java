@@ -21,6 +21,12 @@ public class java_2 {
         char letter = '@';
         boolean isAdult = true;
 
+        System.out.println(age);
+        System.out.println(phone);
+        System.out.println(phone2);
+        System.out.println(pi);
+        System.out.println(letter);
+        System.out.println(isAdult);
 
         /****NON-PREMITIVE DATATYPE */
         String name = "Aman";
