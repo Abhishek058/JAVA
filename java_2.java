@@ -21,5 +21,9 @@ public class java_2 {
         char letter = '@';
         boolean isAdult = true;
 
+
+        /****NON-PREMITIVE DATATYPE */
+        String name = "Aman";
+        System.out.println(name.length());
     }
 }
