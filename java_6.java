@@ -15,5 +15,17 @@ public class java_6 {
         System.out.println(mul);
         System.out.println(div);
         System.out.println(mod);
+
+        //Urinary operator
+        int c = 4;
+        System.out.println(c++);
+        System.out.println(++c);
+
+        System.out.println(c--);
+        System.out.println(--c);
+
+        //Maths class function
+        System.out.println(Math.max(242,751));
+        //max, min, random, 
     }
 }
