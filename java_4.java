@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class java_4 {
@@ -24,7 +23,7 @@ public class java_4 {
         System.out.println(studDetail[1]);
 
         int[] marks = { 88, 95, 87 };// 1D Array
-        int[][] finalmarks = {{ 88, 95, 87}, { 90, 87, 98}};// 2D Array
+        int[][] finalmarks = { { 81, 93, 77 }, { 90, 87, 98 }, marks };// 2D Array
         System.out.println(finalmarks[1][0]);
     }
 }
