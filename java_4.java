@@ -1,3 +1,5 @@
+//Lecture 4 in which we will learn about Arrays
+
 import java.util.Arrays;
 
 public class java_4 {
