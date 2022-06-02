@@ -34,6 +34,6 @@ public class java_10 {
             System.out.print("Your number: ");
             System.out.println(n);
         } while (n > 0);
-        System.out.println("********END*******");
+        System.out.println("********END********");
     }
 }
