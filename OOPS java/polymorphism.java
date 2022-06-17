@@ -14,17 +14,28 @@ class Student {
     }
     // No distructor in java it hase some garbage store
 
-    public void printName() {
-        System.out.println(this.name);
+    // Polymorphism
+    public void printInfo(String name) {
+        System.out.println(name);
     }
 
-    public void printRoll() {
-        System.out.println(this.rollno);
+    public void printInfo(int rollno) {
+        System.out.println(rollno);
+    }
+
+    public void printInfo(String name, int rollno) {
+        System.out.println(name + " " + rollno);
     }
 }
 
 public class polymorphism {
     public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.name = "Abhishek";
+        s1.rollno = 1234;
 
+        s1.printInfo("Abhishek");
+        s1.printInfo(32);
+        s1.printInfo("abhishek", 32);
     }
 }
