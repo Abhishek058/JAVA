@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+//Pen class: initialize data in code and get output
 class Pen {
     String color;
     String type;
@@ -17,9 +18,30 @@ class Pen {
     }
 }
 
+// Student class: input data in terminal and get output
 class Student {
     String name;
     int rollno;
+
+    // Default constructor
+    Student() {
+        System.out.println("Constructor Called");
+    }
+
+    // Parameterised Constructor
+    Student(String name, int rollno) {
+        this.name = name;
+        this.rollno = rollno;
+    }
+
+    // copy constructor
+    Student(Student s2) {
+        this.name = s2.name;
+        this.rollno = s2.rollno;
+    }
+    // ~Student() {
+    // System.out.println("Destructor Called");
+    // }
 
     public void getName() {
         Scanner sc = new Scanner(System.in);
