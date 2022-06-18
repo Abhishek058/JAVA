@@ -12,7 +12,7 @@ class Student {
         this.name = name;
         this.rollno = rollno;
     }
-    // No distructor in java it hase some garbage store
+    // No distructor in java it has its own garbage store
 
     // Polymorphism
     public void printInfo(String name) {
