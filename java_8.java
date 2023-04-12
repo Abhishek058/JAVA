@@ -33,5 +33,6 @@ public class java_8 {
         else if(c>a && c>a){
             System.out.println("C is max");
         }
+        sc.close();
     }
 }

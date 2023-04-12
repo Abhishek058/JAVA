@@ -30,5 +30,6 @@ public class java_9 {
             case 7:
                 System.out.println("Saturday");
         }
+        sc.close();
     }
 }

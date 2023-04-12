@@ -18,5 +18,6 @@ public class java_7 {
         System.out.println("Input Sentence: ");
         String sentence = sc.nextLine();
         System.out.println(sentence);
+        sc.close();
     }
 }

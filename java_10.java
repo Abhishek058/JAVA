@@ -35,5 +35,6 @@ public class java_10 {
             System.out.println(n);
         } while (n > 0);
         System.out.println("********END********");
+        sc.close();
     }
 }
