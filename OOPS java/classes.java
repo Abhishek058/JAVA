@@ -47,12 +47,14 @@ class Student {
         Scanner sc = new Scanner(System.in);
         System.out.println("Input Name: ");
         name = sc.nextLine();
+        sc.close();
     }
 
     public void getroll() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Input RollNo: ");
         rollno = sc.nextInt();
+        sc.close();
     }
 
     public void printName() {

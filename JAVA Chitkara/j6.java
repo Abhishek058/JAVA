@@ -16,6 +16,7 @@ public class j6 {
                 System.out.println("NO");
             }
         }
+        sc.close();
     }
 
     public static void maxBurger() {
@@ -32,6 +33,7 @@ public class j6 {
                 System.out.println(patty);
             }
         }
+        sc.close();
     }
 
     public static void biryani() {
@@ -44,6 +46,7 @@ public class j6 {
 
             System.out.println(x * y);
         }
+        sc.close();
     }
 
     public static void main(String[] args) {
