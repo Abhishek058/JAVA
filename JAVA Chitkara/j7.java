@@ -9,7 +9,7 @@ public class j7 {
             arr[i] = sc.nextInt();
         }
 
-        int zeroCount = 0, oneCount = 0, twoCount = 0;
+        int zeroCount = 0, oneCount = 0;
 
         for (int i = 0; i < n; i++) {
             switch (arr[i]) {
@@ -18,9 +18,6 @@ public class j7 {
                     break;
                 case 1:
                     oneCount++;
-                    break;
-                case 2:
-                    twoCount++;
                     break;
             }
         }
