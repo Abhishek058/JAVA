@@ -1,33 +1,33 @@
 import java.util.Scanner;
 
 class cnt1 {
-    int a, b, c, sum1;
+    int a, b, c;
+
     public void input() {
         Scanner sc = new Scanner(System.in);
         a = sc.nextInt();
         b = sc.nextInt();
         c = sc.nextInt();
-        sum1 = a+b+c;
     }
 
     public int getSum() {
-        return sum1;
+        return a + b + c;
     }
 }
 
 class cnt2 extends cnt1 {
-    int x, y, z, sum2;
+    int x, y, z;
+
     public void input2() {
         input();
         Scanner sc = new Scanner(System.in);
         x = sc.nextInt();
         y = sc.nextInt();
         z = sc.nextInt();
-        sum2 = x+y+z+getSum();
     }
 
     public int getSum2() {
-        return sum2;
+        return x + y + z + getSum();
     }
 }
 
