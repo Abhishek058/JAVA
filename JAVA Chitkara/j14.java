@@ -43,7 +43,7 @@ public class j14 {
         sc.close();
     }
 
-    public static void updateBit(){
+    public static void updateBit() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter Number: ");
         int n = sc.nextInt();
@@ -52,10 +52,9 @@ public class j14 {
         System.out.print("Updating Bit: ");
         int uBit = sc.nextInt();
         int x;
-        if(uBit == 0){
+        if (uBit == 0) {
             x = (~(1 << pos)) & n;
-        }
-        else{
+        } else {
             x = (1 << pos) | n;
         }
         System.out.println("After Updating: " + x);
