@@ -1,3 +1,6 @@
+import java.util.*;
+import bank.*;
+
 class Shape {
     int age;
     public void area() {
@@ -19,8 +22,10 @@ class Circle extends Shape {
 
 public class java13 {
     public static void main(String[] args) {
-        Triangle t1=new Triangle();
-        t1.age=20;
-        System.out.println(t1.age);
+        // Triangle t1=new Triangle();
+        // t1.age=20;
+        // System.out.println(t1.age);
+        bank.Account account1 = new bank.Account();
+        account1.name = "coustomer1";
     }
 }
