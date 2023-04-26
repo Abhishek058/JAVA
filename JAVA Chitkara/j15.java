@@ -53,6 +53,7 @@ public class j15 {
         }
         return x * power(x, n - 1);
     }
+
     public static void towerOfHanoi(int n, String src, String help, String dest) {
         if (n == 1) {
             System.out.println("transfer disk: " + n + " from " + src + " to " + dest);
@@ -64,6 +65,16 @@ public class j15 {
         towerOfHanoi(n - 1, help, dest, src);
     }
 
+    public static void reverseString(String str, int idx) {
+        if (idx == 0) {
+            System.out.print(str.charAt(idx));
+            return;
+        }
+        System.out.print(str.charAt(idx));
+        reverseString(str, idx - 1);
+
+    }
+
     public static void main(String[] args) {
         // fernheit();
         // printNum(6);
@@ -72,6 +83,6 @@ public class j15 {
         // System.out.println(fibonnaci(6));
         // System.out.println(power(2, 10));
         // towerOfHanoi(3, "S", "H", "D");
-        
+        // reverseString("abhishek", 7);
     }
 }
