@@ -14,7 +14,52 @@ public class j15 {
         }
     }
 
+    public static void printNum(int n) {
+        if (n == 0) {
+            return;
+        }
+        printNum(n - 1);
+        System.out.println(n);
+    }
+
+    public static int sumNum(int i, int n) {
+        if (n == i) {
+            return i;
+        }
+        return n + sumNum(i, n - 1);
+    }
+
+    public static int factorial(int n) {
+        if (n == 0 || n == 1) {
+            return 1;
+        }
+        return n * factorial(n - 1);
+    }
+
+    public static int fibonacci(int n) {
+        if (n == 0 || n == 1) {
+            return n;
+        }
+
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    public static int power(int x, int n) {
+        if (n == 0) {
+            return 1;
+        }
+        if (x == 0) {
+            return 0;
+        }
+        return x * power(x, n - 1);
+    }
+
     public static void main(String[] args) {
-        fernheit();
+        // fernheit();
+        // printNum(6);
+        // System.out.println(sumNum(4, 5));
+        // System.out.println(factorial(20));
+        // System.out.println(fibonnaci(6));
+        // System.out.println(power(2, 10));
     }
 }
