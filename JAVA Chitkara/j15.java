@@ -124,6 +124,34 @@ public class j15 {
         }
     }
 
+    public static boolean[] map = new boolean[26];
+
+    public static void removeDup(String str, int idx, String newStr) {
+        if (idx == str.length()) {
+            System.out.println(newStr);
+            return;
+        }
+
+        char currCh = str.charAt(idx);
+        if (map[currCh - 'a']) {
+            removeDup(str, idx + 1, newStr);
+        } else {
+            newStr += currCh;
+            map[currCh - 'a'] = true;
+            removeDup(str, idx + 1, newStr);
+        }
+    }
+
+    public static void subSeq(String str, int idx, String newString) {
+        if (idx == str.length()) {
+            System.out.println(newString);
+            return;
+        }
+        char currCh = str.charAt(idx);
+        subSeq(str, idx + 1, newString + currCh);
+        subSeq(str, idx + 1, newString);
+    }
+
     public static void main(String[] args) {
         // fernheit();
 
@@ -147,5 +175,8 @@ public class j15 {
         // System.out.println(isSorted(arr, 0));
 
         // moveAllX("bxdxxcbcxcb", 0, 0, "");
+
+        // removeDup("babaabbcacb", 0, "");
+        subSeq("abc", 0, "");
     }
 }
