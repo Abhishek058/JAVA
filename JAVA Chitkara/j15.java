@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import java.util.Arrays;
+import java.util.HashSet;
 
 public class j15 {
     public static void fernheit() {
@@ -152,6 +152,36 @@ public class j15 {
         subSeq(str, idx + 1, newString);
     }
 
+    public static void uniqSubSeq(String str, int idx, String newString, HashSet<String> set) {
+        if (idx == str.length()) {
+            if (set.contains(newString)) {
+                return;
+            } else {
+                System.out.println(newString);
+                set.add(newString);
+                return;
+            }
+        }
+        char currCh = str.charAt(idx);
+        uniqSubSeq(str, idx + 1, newString + currCh, set);
+        uniqSubSeq(str, idx + 1, newString, set);
+    }
+
+    public static String[] keypad = { ".", "abc", "def", "ghi", "jkl", "mno", "pqr", "stu", "vwx", "yz" };
+
+    public static void keypadComb(String str, int idx, String combination) {
+        if (idx == str.length()) {
+            System.out.println(combination);
+            return;
+        }
+        char currCh = str.charAt(idx);
+        String map = keypad[currCh - '0'];
+
+        for (int i = 0; i < map.length(); i++) {
+            keypadComb(str, idx + 1, combination + map.charAt(i));
+        }
+    }
+
     public static void main(String[] args) {
         // fernheit();
 
@@ -177,6 +207,12 @@ public class j15 {
         // moveAllX("bxdxxcbcxcb", 0, 0, "");
 
         // removeDup("babaabbcacb", 0, "");
-        subSeq("abc", 0, "");
+
+        // subSeq("abc", 0, "");
+
+        // HashSet<String> set = new HashSet<>();
+        // uniqSubSeq("aaa", 0, "", set);
+
+        keypadComb("4", 0, "");
     }
 }
