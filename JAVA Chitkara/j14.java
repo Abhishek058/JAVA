@@ -1,4 +1,3 @@
-import java.nio.file.attribute.UserPrincipal;
 import java.util.Scanner;
 
 public class j14 {

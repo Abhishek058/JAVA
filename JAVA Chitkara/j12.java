@@ -12,6 +12,7 @@ class A {
         System.out.print("Enter third integer: ");
         int num3 = scanner.nextInt();
         sum = num1 + num2 + num3;
+        scanner.close();
     }
 
     public int getSum() {
@@ -31,6 +32,7 @@ class B {
         System.out.print("Enter third integer: ");
         int num3 = scanner.nextInt();
         sum = num1 + num2 + num3 + objA.getSum();
+        scanner.close();
     }
 
     public int getSum() {

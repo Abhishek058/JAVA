@@ -1,8 +1,6 @@
 import java.util.Scanner;
 import java.util.Vector;
 
-import javax.swing.plaf.synth.SynthStyle;
-
 class STj18 {
     public static void triplet(int arr[]) {
         int n = arr.length;

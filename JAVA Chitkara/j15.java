@@ -12,6 +12,7 @@ public class j15 {
             int c = (i - 32) * 5 / 9;
             System.out.print(i + " -> " + c + "\n");
         }
+        sc.close();
     }
 
     public static void printNum(int n) {

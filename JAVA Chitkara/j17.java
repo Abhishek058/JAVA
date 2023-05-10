@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class j17 {
     public static int power(int n, int x) {
         if (x == 0) {

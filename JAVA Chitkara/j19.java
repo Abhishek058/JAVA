@@ -31,8 +31,6 @@ class j19 {
             scores[i][0] = sc.nextInt();
             scores[i][1] = sc.nextInt();
         }
-        int arr[] = new int[2];
-        arr = maximumLead(scores);
         System.out.println(maximumLead(scores)[0] + " " + maximumLead(scores)[1]);
         sc.close();
     }

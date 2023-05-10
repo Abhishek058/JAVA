@@ -8,6 +8,8 @@ class cnt1 {
         a = sc.nextInt();
         b = sc.nextInt();
         c = sc.nextInt();
+
+        sc.close();
     }
 
     public int getSum() {
@@ -24,6 +26,7 @@ class cnt2 extends cnt1 {
         x = sc.nextInt();
         y = sc.nextInt();
         z = sc.nextInt();
+        sc.close();
     }
 
     public int getSum2() {
