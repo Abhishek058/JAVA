@@ -20,7 +20,7 @@ class Circle extends Shape {
     }
 }
 
-public class java13 {
+public class j13 {
     public static void main(String[] args) {
         // Triangle t1=new Triangle();
         // t1.age=20;
