@@ -5,5 +5,6 @@ public class ans {
 
     public static void main(String[] args) {
         ans a = new ans();
+        System.out.println(a);
     }
 }
