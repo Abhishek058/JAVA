@@ -62,32 +62,226 @@
 // {
 // }
 
-#include <bits/stdc++.h>
-using namespace std;
+// #include <bits/stdc++.h>
+// using namespace std;
 
-class Solution
-{
-public:
-    vector<int> plusOne(vector<int> &digits)
-    {
-        int n = digits.size() - 1;
-        digits[n] += 1;
-        int i = n;
-        while (digits[i] < 10)
-        {
-            digits[i] += 1;
-            i--;
-        }
-        return digits;
-    }
-};
+// class Solution
+// {
+// public:
+//     vector<int> plusOne(vector<int> &digits)
+//     {
+//         int n = digits.size() - 1;
+//         digits[n] += 1;
+//         int i = n;
+//         while (digits[i] < 10)
+//         {
+//             digits[i] += 1;
+//             i--;
+//         }
+//         return digits;
+//     }
+// };
 
-int main()
-{
-    Solution s;
-    vector<int> v;
-    v.push_back(1);
-    v.push_back(2);
-    v.push_back(3);
-    s.plusOne(v);
-}
+// int main()
+// {
+//     Solution s;
+//     vector<int> v;
+//     v.push_back(1);
+//     v.push_back(2);
+//     v.push_back(3);
+//     s.plusOne(v);
+// }
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// class Solution
+// {
+// public:
+//     int binDeci(string str)
+//     {
+//         int n = stoi(str);
+//         int deci = 0;
+//         int i = 0;
+//         while (n != 0)
+//         {
+//             deci += n % 10 * pow(2, i);
+//             n /= 10;
+//             i++;
+//         }
+//         return deci;
+//     }
+
+//     int deciBin(int n)
+//     {
+//         int binaryNumber[100], num = n;
+//         int i = 0;
+//         int ans = 0;
+//         while (n > 0)
+//         {
+//             binaryNumber[i] = n % 2;
+//             n = n / 2;
+//             i++;
+//         }
+//         for (int j = i - 1; j >= 0; j--)
+//         {
+//             ans = ans * 10 + binaryNumber[j];
+//         }
+//         return ans;
+//     }
+//     string addBinary(string a, string b)
+//     {
+//         int n = binDeci(a) + binDeci(b);
+//         string str = to_string(deciBin(n));
+//         return str;
+//     }
+// };
+
+// int main()
+// {
+//     Solution s;
+//     cout << s.addBinary("11", "1");
+// }
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// class Solution
+// {
+// public:
+//     int addDigits(int num)
+//     {
+//         int res = 0;
+//         while (num != 0)
+//         {
+//             res += num % 10;
+//             num /= 10;
+//         }
+//         if(res<10){
+//             return res;
+//         }
+//         return addDigits(res);
+//     }
+// };
+
+// int main()
+// {
+//     Solution s;
+//     cout << s.addDigits(38);
+// }
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// class Solution
+// {
+// public:
+//     bool isAnagram(string s, string t)
+//     {
+//         if (s.length() != t.length())
+//         {
+//             return false;
+//         }
+
+//         unordered_map<char, int> charCount1;
+//         unordered_map<char, int> charCount2;
+
+//         for (char c : s) {
+//             charCount1[c]++;
+//         }
+//         for (char c : t) {
+//             charCount2[c]++;
+//         }
+
+//         if(charCount1 == charCount2){
+//             return true;
+//         }
+//         return false;
+//     }
+// };
+
+// int main()
+// {
+//     Solution s;
+//     cout<<s.isAnagram("aacc", "ccac");
+// }
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// class Solution
+// {
+// public:
+//     bool isVowel(char ch)
+//     {
+//         if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+//         {
+//             return true;
+//         }
+//         return false;
+//     }
+//     string reverseVowels(string s)
+//     {
+//         int i = 0;
+//         int j = s.length() - 1;
+//         while (i <= j)
+//         {
+//             if (isVowel(s[i]) && isVowel(s[j]))
+//             {
+//                 swap(s[i],s[j]);
+//                 i++;
+//                 j--;
+//             }
+//             else if (isVowel(s[i]) && !isVowel(s[j]))
+//             {
+//                 j--;
+//             }
+//             else if (!isVowel(s[i]) && isVowel(s[j]))
+//             {
+//                 i++;
+//             }
+//             else{
+//                 i++;
+//                 j--;
+//             }
+//         }
+//         return s;
+//     }
+// };
+
+// int main()
+// {
+//     Solution s;
+//     cout << s.reverseVowels("leetcode");
+// }
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// class Solution
+// {
+// public:
+//     bool wordPattern(string pattern, string s)
+//     {
+//         stringstream ss(s);
+//         vector<string> words;
+//         string word;
+//         string patt = "";
+//         while (ss >> word)
+//         {
+//             words.push_back(word);
+//         }
+//         if (words.size() != pattern.size()){
+//             return false;
+//         }
+        
+//     }
+// };
+
+// int main()
+// {
+//     Solution s;
+//     cout << s.wordPattern("abba", "dog cat cat dog");
+// }
+
+
