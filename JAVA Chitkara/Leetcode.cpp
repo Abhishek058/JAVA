@@ -289,12 +289,19 @@ using namespace std;
 
 class Solution {
 public:
-    string longestCommonPrefix(vector<string>& strs) {
-        
+    char findTheDifference(string s, string t) {
+        int a = 0, b = 0;
+        for(int i=0;i<s.length();i++){
+            a+=s[i];
+        }
+        for(int i=0;i<t.length();i++){
+            b+=t[i];
+        }
+        char res = b - a;
+        return res;
     }
 };
-
 int main(){
     Solution s;
-    s.longestCommonPrefix();
+    cout<<s.findTheDifference("abcd","abcde");
 }
