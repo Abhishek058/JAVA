@@ -274,7 +274,7 @@
 //         if (words.size() != pattern.size()){
 //             return false;
 //         }
-        
+
 //     }
 // };
 
@@ -284,4 +284,17 @@
 //     cout << s.wordPattern("abba", "dog cat cat dog");
 // }
 
+#include <bits/stdc++.h>
+using namespace std;
 
+class Solution {
+public:
+    string longestCommonPrefix(vector<string>& strs) {
+        
+    }
+};
+
+int main(){
+    Solution s;
+    s.longestCommonPrefix();
+}
