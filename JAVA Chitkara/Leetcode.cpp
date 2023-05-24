@@ -284,24 +284,52 @@
 //     cout << s.wordPattern("abba", "dog cat cat dog");
 // }
 
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// class Solution {
+// public:
+//     char findTheDifference(string s, string t) {
+//         int a = 0, b = 0;
+//         for(int i=0;i<s.length();i++){
+//             a+=s[i];
+//         }
+//         for(int i=0;i<t.length();i++){
+//             b+=t[i];
+//         }
+//         char res = b - a;
+//         return res;
+//     }
+// };
+// int main(){
+//     Solution s;
+//     cout<<s.findTheDifference("abcd","abcde");
+// }
+
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
-public:
-    char findTheDifference(string s, string t) {
-        int a = 0, b = 0;
-        for(int i=0;i<s.length();i++){
-            a+=s[i];
-        }
-        for(int i=0;i<t.length();i++){
-            b+=t[i];
-        }
-        char res = b - a;
-        return res;
+int singleNumber(vector<int> &nums)
+{
+    int n = nums.size();
+    int res = 0;
+    unordered_map<int, int> freq;
+    for (int e : nums)
+    {
+        freq[e]++;
     }
-};
-int main(){
-    Solution s;
-    cout<<s.findTheDifference("abcd","abcde");
+    for (const auto &pairs : freq)
+    {
+        if (pairs.second == 1)
+        {
+            res = pairs.first;
+        }
+    }
+    return res;
+}
+
+int main()
+{
+    vector<int> v = {4,1,2,1,2};
+    cout << singleNumber(v);
 }
