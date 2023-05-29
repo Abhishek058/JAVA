@@ -306,30 +306,95 @@
 //     cout<<s.findTheDifference("abcd","abcde");
 // }
 
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// int singleNumber(vector<int> &nums)
+// {
+//     int n = nums.size();
+//     int res = 0;
+//     unordered_map<int, int> freq;
+//     for (int e : nums)
+//     {
+//         freq[e]++;
+//     }
+//     for (const auto &pairs : freq)
+//     {
+//         if (pairs.second == 1)
+//         {
+//             res = pairs.first;
+//         }
+//     }
+//     return res;
+// }
+
+// int main()
+// {
+//     vector<int> v = {4,1,2,1,2};
+//     cout << singleNumber(v);
+// }
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// int main()
+// {
+//     int arr[] = {1, 2, 3, 4, 5};
+//     int m = 2;
+//     int n = 4;
+//     while (m != n)
+//     {
+//         swap(arr[m - 1], arr[n - 1]);
+//         m++;
+//         n--;
+//     }
+//     for (int i = 0; i < 5; i++)
+//     {
+//         cout << arr[i] << " ";
+//     }
+// }
+
 #include <bits/stdc++.h>
 using namespace std;
 
-int singleNumber(vector<int> &nums)
+bool check(vector<int> &v, int x)
 {
-    int n = nums.size();
-    int res = 0;
-    unordered_map<int, int> freq;
-    for (int e : nums)
+    if (x == 1)
     {
-        freq[e]++;
-    }
-    for (const auto &pairs : freq)
-    {
-        if (pairs.second == 1)
+        if (v[0] == 0)
         {
-            res = pairs.first;
+            return false;
         }
+        v[0]--;
     }
-    return res;
+    if (x == 2)
+    {
+        if (v[1] == 0)
+        {
+            return false;
+        }
+        v[1]--;
+    }
+    if (x == 3)
+    {
+        if (v[2] == 0)
+        {
+            return false;
+        }
+        v[2]--;
+    }
+    return true;
 }
 
 int main()
 {
-    vector<int> v = {4,1,2,1,2};
-    cout << singleNumber(v);
+    vector<int> v = {1, 1, 0};
+    int m;
+    cin >> m;
+    for (int i = 0; i < m; i++)
+    {
+        int x;
+        cin >> x;
+        cout << check(v, x);
+    }
 }
