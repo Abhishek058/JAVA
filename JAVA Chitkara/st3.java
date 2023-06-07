@@ -13,7 +13,7 @@ public class st3 {
         String res = "";
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == ch1) {
-                res = res + 'x';
+                res = res + ch2;
             } else {
                 res += str.charAt(i);
             }
@@ -83,6 +83,6 @@ public class st3 {
         // findFirst();
         // summArray();
         // insertstring();\
-        frequncy();
+        // frequncy();
     }
 }
