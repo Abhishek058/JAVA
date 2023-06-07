@@ -242,13 +242,172 @@ public class prac {
         }
     }
 
+    public static void stringCompress() {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+
+        int[] arr = new int[256];
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            arr[ch]++;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > 0) {
+                System.out.print((char) i + "" + arr[i]);
+            }
+        }
+    }
+
+    public static void changeCase() {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+
+            if (ch >= 65 && ch <= 90) {
+                ch += 32;
+                System.out.print(ch);
+            } else if (ch >= 97 && ch <= 123) {
+                ch -= 32;
+                System.out.print(ch);
+            }
+        }
+    }
+
+    public static void ticketBooking() {
+        Scanner sc = new Scanner(System.in);
+        int t = sc.nextInt();
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+
+        t = t - a;
+
+        if (t > 0 && b <= t) {
+            System.out.println("John: tickets booked: " + a + "\nMike: tickets booked: " + b);
+        } else if (t > 0 && b > t) {
+            System.out.println("John: tickets booked: " + a + "\nMike: not booked");
+        }
+    }
+
+    public static void Kthfromlast() {
+        Scanner sc = new Scanner(System.in);
+        Vector<Integer> v = new Vector<>();
+        int n = sc.nextInt();
+        v.add(n);
+        while (n != -1) {
+            n = sc.nextInt();
+            v.add(n);
+        }
+        int x = sc.nextInt();
+        System.out.println(v.get(v.size() - x - 1));
+    }
+
+    public static void stockSpan() {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int a = arr[0];
+        int cnt = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] >= a) {
+                cnt++;
+                System.out.print(cnt + " ");
+                a = arr[i];
+            } else {
+                System.out.print("1 ");
+            }
+        }
+        System.out.print("END");
+    }
+
+    public static void sortSquare() {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            int x = sc.nextInt();
+            arr[i] = x * x;
+        }
+
+        Arrays.sort(arr);
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    public static void highestOccure() {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        int[] arr = new int[256];
+
+        for (int i = 0; i < str.length(); i++) {
+            char ch = str.charAt(i);
+            arr[ch]++;
+        }
+
+        int maxIdx = 0, maxi = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > maxi) {
+                maxi = arr[i];
+                maxIdx = i;
+            }
+        }
+
+        System.out.println((char) maxIdx + "");
+    }
+
+    public static void checkAP() {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        Arrays.sort(arr);
+        int flag = 0;
+
+        for (int i = 0; i < n - 2; i++) {
+            if (arr[i + 1] - arr[i] == arr[i + 2] - arr[i + 1]) {
+                flag = 1;
+            } else {
+                flag = 0;
+            }
+        }
+
+        if (flag == 1) {
+            System.out.println("YES");
+        } else {
+            System.out.println("NO");
+        }
+    }
+
+    public static void findFirstOcc() {
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+
+        System.out.println(s1.indexOf(s2));
+    }
+
     public static void main(String[] args) {
         // deciToBin(33);
         // checkArm(6);
         // armstrongBetweenab(100, 10000);
         // neonNumber(0);
         // noOfOnes(10);
-        // implement_an_integer_array();
+        implement_an_integer_array();
         // pipe_warehouse();
         // diamond();
         // matricReverse();
@@ -256,6 +415,15 @@ public class prac {
         // reverseKth();
         // runningSum();
         // reverseNumbers();
-        missingNumber();
+        // missingNumber();
+        // stringCompress();
+        // changeCase();
+        // ticketBooking();
+        // Kthfromlast();
+        // stockSpan();
+        // sortSquare();
+        // highestOccure();
+        // checkAP();
+        // findFirstOcc();
     }
 }
