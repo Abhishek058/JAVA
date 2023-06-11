@@ -354,47 +354,99 @@
 //     }
 // }
 
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// bool check(vector<int> &v, int x)
+// {
+//     if (x == 1)
+//     {
+//         if (v[0] == 0)
+//         {
+//             return false;
+//         }
+//         v[0]--;
+//     }
+//     if (x == 2)
+//     {
+//         if (v[1] == 0)
+//         {
+//             return false;
+//         }
+//         v[1]--;
+//     }
+//     if (x == 3)
+//     {
+//         if (v[2] == 0)
+//         {
+//             return false;
+//         }
+//         v[2]--;
+//     }
+//     return true;
+// }
+
+// int main()
+// {
+//     vector<int> v = {1, 1, 0};
+//     int m;
+//     cin >> m;
+//     for (int i = 0; i < m; i++)
+//     {
+//         int x;
+//         cin >> x;
+//         cout << check(v, x);
+//     }
+// }
+
 #include <bits/stdc++.h>
 using namespace std;
 
-bool check(vector<int> &v, int x)
+class Solution
 {
-    if (x == 1)
+public:
+    int lengthOfLongestSubstring(string s)
     {
-        if (v[0] == 0)
+        vector<set<char>> v;
+        int maxLen = 0;
+
+        for (int i = 0; i < s.length(); i++)
         {
-            return false;
+            set<char> set;
+            set.insert(s[i]);
+            for (int j = i + 1; j < s.length(); j++)
+            {
+                if (s[i] != s[j])
+                {
+                    set.insert(s[j]);
+                }
+                else
+                {
+                    break;
+                }
+            }
+            v.push_back(set);
+            for (char ch : set)
+            {
+                cout << ch << " ";
+            }
+            cout << endl;
         }
-        v[0]--;
+
+        // for (int i = 0; i < v.size(); i++)
+        // {
+        //     if (maxLen < v[i].size())
+        //     {
+        //         maxLen = v[i].size();
+        //     }
+        // }
+
+        // return maxLen;
     }
-    if (x == 2)
-    {
-        if (v[1] == 0)
-        {
-            return false;
-        }
-        v[1]--;
-    }
-    if (x == 3)
-    {
-        if (v[2] == 0)
-        {
-            return false;
-        }
-        v[2]--;
-    }
-    return true;
-}
+};
 
 int main()
 {
-    vector<int> v = {1, 1, 0};
-    int m;
-    cin >> m;
-    for (int i = 0; i < m; i++)
-    {
-        int x;
-        cin >> x;
-        cout << check(v, x);
-    }
+    Solution s1;
+    s1.lengthOfLongestSubstring("abcabcbb");
 }

@@ -1,6 +1,8 @@
 import java.lang.reflect.Array;
 import java.util.*;
 
+import org.ietf.jgss.Oid;
+
 public class prac {
     public static void deciToBin(int n) {
         String res = "";
@@ -93,19 +95,21 @@ public class prac {
     public static void pipe_warehouse() {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int[] arr = new int[n];
+        ArrayList<Integer> arr = new ArrayList<>();
 
         for (int i = 0; i < n; i++) {
-            arr[i] = sc.nextInt();
+            int x = sc.nextInt();
+            arr.add(x);
         }
 
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[i] < arr[j]) {
-                    System.out.print(arr[i]);
+        for (int i = 0; i < arr.size(); i++) {
+            for (int j = i + 1; j < arr.size(); j++) {
+                if (arr.get(i) < arr.get(j)) {
+                    arr.remove(j);
                 }
             }
         }
+        System.out.println(arr);
     }
 
     public static void diamond() {
@@ -401,13 +405,195 @@ public class prac {
         System.out.println(s1.indexOf(s2));
     }
 
+    public static void permutationString() {
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.nextLine();
+        String s2 = sc.nextLine();
+
+        if (s1.length() != s2.length()) {
+            System.out.println("NO");
+        }
+
+        char[] str1 = s1.toCharArray();
+        char[] str2 = s2.toCharArray();
+
+        Arrays.sort(str1);
+        Arrays.sort(str2);
+
+        for (int i = 0; i < str1.length; i++) {
+            if (str1[i] != str2[i]) {
+                System.out.println("No");
+                break;
+            }
+        }
+        System.out.println("Yes");
+    }
+
+    public static void CalculateArea() {
+        Scanner sc = new Scanner(System.in);
+        int choice = sc.nextInt();
+
+        switch (choice) {
+            case 1:
+                double l = sc.nextDouble();
+                double b = sc.nextDouble();
+
+                System.out.printf("Area: %.2f", l * b);
+                System.out.println();
+                System.out.printf("Perimeter: %.2f", 2 * (l + b));
+        }
+    }
+
+    public static void trimSpace() {
+        String str = "      welcome";
+        System.out.println(str.trim());
+    }
+
+    public static void sortString() {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String[] arr = new String[n];
+
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextLine();
+        }
+
+        Arrays.sort(arr);
+
+        for (int i = 0; i < n; i++) {
+            System.out.println(arr[i]);
+        }
+    }
+
+    public static void nearestMultipleOf10() {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+
+        if (n % 10 > 5) {
+            System.out.println(((n + 10) / 10) * 10);
+        } else if (n % 10 <= 5) {
+            System.out.println((n / 10) * 10);
+        }
+    }
+
+    public static void findEmployee() {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String[] arr = new String[n];
+
+        for (int i = 0; i < n; i++) {
+            int x = sc.nextInt();
+            arr[x - 1] = sc.next();
+        }
+
+        int k = sc.nextInt();
+
+        if (k > n) {
+            System.out.println("Not found");
+        } else {
+            System.out.println(arr[k - 1]);
+        }
+    }
+
+    public static void check(char ch) {
+        System.out.println((int) ch);
+    }
+
+    public static void EOstring() {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.next();
+
+        for (int i = 0; i < str.length(); i += 2) {
+            System.out.print(str.charAt(i));
+        }
+        for (int i = 1; i < str.length(); i += 2) {
+            System.out.print(str.charAt(i));
+        }
+    }
+
+    public static void reverseStringArr() {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+
+        String[] arr = str.split(" ");
+        for (int i = arr.length - 1; i >= 0; i--) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    public static void sumAscii() {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        int n = sc.nextInt();
+        ArrayList<Character> arr = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            char ch = sc.next().charAt(0);
+            arr.add(ch);
+        }
+
+        int sum = 0;
+        for (int i = 0; i < str.length(); i++) {
+            if (arr.contains(str.charAt(i))) {
+                sum += (int) str.charAt(i);
+            }
+        }
+
+        System.out.println(sum);
+    }
+
+    public static void asciiString() {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+
+        String[] arr = str.split(" ");
+
+        System.out.print(arr.length + " ");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i].charAt(0) + "" + (int) arr[i].charAt(0) + " ");
+        }
+    }
+
+    public static void maxOcc() {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        int[] arr = new int[256];
+
+        for (int i = 0; i < str.length(); i++) {
+            if (str.charAt(i) != ' ') {
+                char ch = str.charAt(i);
+                arr[ch]++;
+            }
+        }
+
+        int maxi = 0, maxIdx = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > maxi) {
+                maxi = arr[i];
+                maxIdx = i;
+            }
+        }
+
+        System.out.println(maxi + " " + (char) maxIdx);
+    }
+
+    public static void reverseWord() {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        
+        String[] arr = str.split(" ");
+        for(int i=0;i<arr.length;i++){
+            StringBuilder sb = new StringBuilder(arr[i]);
+            System.out.print(sb.reverse().toString() + " ");
+        }
+    }
+
     public static void main(String[] args) {
         // deciToBin(33);
         // checkArm(6);
         // armstrongBetweenab(100, 10000);
         // neonNumber(0);
         // noOfOnes(10);
-        implement_an_integer_array();
+        // implement_an_integer_array();
         // pipe_warehouse();
         // diamond();
         // matricReverse();
@@ -425,5 +611,18 @@ public class prac {
         // highestOccure();
         // checkAP();
         // findFirstOcc();
+        // permutationString();
+        // CalculateArea();
+        // trimSpace();
+        // sortString();
+        // nearestMultipleOf10();
+        // findEmployee();
+        // check('A');
+        // EOstring();
+        // reverseStringArr();
+        // sumAscii();
+        // asciiString();
+        // maxOcc();
+        // reverseWord();
     }
 }
