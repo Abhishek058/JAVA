@@ -532,16 +532,50 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
+class Solution
+{
 public:
-    string countAndSay(int n) {
-        string str = to_string(n);
-        string res = "";
-        int arr[10];
-         
+    bool isAnagram(string s1, string s2)
+    {
+        sort(s1.begin(), s1.end());
+        sort(s2.begin(), s2.end());
+        if (s1 == s2)
+        {
+            return true;
+        }
+        return false;
+    }
+    void groupAnagrams(vector<string> &strs)
+    {
+        vector<set<string>> res;
+        for (int i = 0; i < strs.size(); i++)
+        {
+            set<string> v;
+            for (int j = 0; j < strs.size(); j++)
+            {
+                if (isAnagram(strs[i], strs[j]))
+                {
+                    v.insert(strs[j]);
+                    v.insert(strs[i]);
+                }
+            }
+            res.push_back(v);
+        }
+
+        for (const auto &row : res)
+        {
+            for (const auto &element : row)
+            {
+                std::cout << element << " ";
+            }
+            std::cout << std::endl;
+        }
     }
 };
 
-int main(){
-    
+int main()
+{
+    Solution s;
+    vector<string> strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
+    s.groupAnagrams(strs);
 }
