@@ -399,54 +399,149 @@
 //     }
 // }
 
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// class Solution
+// {
+// public:
+//     int lengthOfLongestSubstring(string s)
+//     {
+//         vector<set<char>> v;
+//         int maxLen = 0;
+
+//         for (int i = 0; i < s.length(); i++)
+//         {
+//             set<char> set;
+//             set.insert(s[i]);
+//             for (int j = i + 1; j < s.length(); j++)
+//             {
+//                 if (s[i] != s[j])
+//                 {
+//                     set.insert(s[j]);
+//                 }
+//                 else
+//                 {
+//                     break;
+//                 }
+//             }
+//             v.push_back(set);
+//             for (char ch : set)
+//             {
+//                 cout << ch << " ";
+//             }
+//             cout << endl;
+//         }
+
+//         // for (int i = 0; i < v.size(); i++)
+//         // {
+//         //     if (maxLen < v[i].size())
+//         //     {
+//         //         maxLen = v[i].size();
+//         //     }
+//         // }
+
+//         // return maxLen;
+//     }
+// };
+
+// int main()
+// {
+//     Solution s1;
+//     s1.lengthOfLongestSubstring("abcabcbb");
+// }
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// class Solution
+// {
+// public:
+//     bool isPalindrome(string str)
+//     {
+//         string reversed = str;
+//         reverse(reversed.begin(), reversed.end());
+//         return str == reversed;
+//     }
+
+//     string longestPalindrome(string s)
+//     {
+//         int n = s.length();
+//         if (n == 1)
+//         {
+//             return s;
+//         }
+
+//         string longest = "";
+
+//         for (int i = 0; i < n; i++)
+//         {
+//             for (int j = i + 1; j <= n; j++)
+//             {
+//                 string substr = s.substr(i, j - i);
+//                 if (isPalindrome(substr) && substr.length() > longest.length())
+//                 {
+//                     longest = substr;
+//                 }
+//             }
+//         }
+
+//         return longest;
+//     }
+// };
+
+// int main()
+// {
+//     Solution s;
+//     cout << s.longestPalindrome("a");
+// }
+
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// class Solution
+// {
+// public:
+//     string convert(string s, int numRows)
+//     {
+//         string str = "";
+//         vector<string> arr(numRows, "");
+//         for (int i = 0; i < s.length();)
+//         {
+//             for (int j = 0; j < numRows; j++)
+//             {
+//                 arr[j] += s[i++];
+//             }
+//             for (int j = numRows - 2; j > 0; j--)
+//             {
+//                 arr[j] += s[i++];
+//             }
+//         }
+//         for (auto &x : arr)
+//             str += x;
+//         return str;
+//     }
+// };
+
+// int main()
+// {
+//     Solution s;
+//     cout << s.convert("PAYPALISHIRING", 3);
+// }
+
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
-{
+class Solution {
 public:
-    int lengthOfLongestSubstring(string s)
-    {
-        vector<set<char>> v;
-        int maxLen = 0;
-
-        for (int i = 0; i < s.length(); i++)
-        {
-            set<char> set;
-            set.insert(s[i]);
-            for (int j = i + 1; j < s.length(); j++)
-            {
-                if (s[i] != s[j])
-                {
-                    set.insert(s[j]);
-                }
-                else
-                {
-                    break;
-                }
-            }
-            v.push_back(set);
-            for (char ch : set)
-            {
-                cout << ch << " ";
-            }
-            cout << endl;
-        }
-
-        // for (int i = 0; i < v.size(); i++)
-        // {
-        //     if (maxLen < v[i].size())
-        //     {
-        //         maxLen = v[i].size();
-        //     }
-        // }
-
-        // return maxLen;
+    string countAndSay(int n) {
+        string str = to_string(n);
+        string res = "";
+        int arr[10];
+         
     }
 };
 
-int main()
-{
-    Solution s1;
-    s1.lengthOfLongestSubstring("abcabcbb");
+int main(){
+    
 }
