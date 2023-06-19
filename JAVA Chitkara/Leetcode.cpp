@@ -529,53 +529,91 @@
 //     cout << s.convert("PAYPALISHIRING", 3);
 // }
 
+// #include <bits/stdc++.h>
+// using namespace std;
+
+// class Solution
+// {
+// public:
+//     bool isAnagram(string s1, string s2)
+//     {
+//         sort(s1.begin(), s1.end());
+//         sort(s2.begin(), s2.end());
+//         if (s1 == s2)
+//         {
+//             return true;
+//         }
+//         return false;
+//     }
+//     void groupAnagrams(vector<string> &strs)
+//     {
+//         vector<set<string>> res;
+//         for (int i = 0; i < strs.size(); i++)
+//         {
+//             set<string> v;
+//             for (int j = 0; j < strs.size(); j++)
+//             {
+//                 if (isAnagram(strs[i], strs[j]))
+//                 {
+//                     v.insert(strs[j]);
+//                     v.insert(strs[i]);
+//                 }
+//             }
+//             res.push_back(v);
+//         }
+
+//         for (const auto &row : res)
+//         {
+//             for (const auto &element : row)
+//             {
+//                 std::cout << element << " ";
+//             }
+//             std::cout << std::endl;
+//         }
+//     }
+// };
+
+// int main()
+// {
+//     Solution s;
+//     vector<string> strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
+//     s.groupAnagrams(strs);
+// }
+
 #include <bits/stdc++.h>
 using namespace std;
 
 class Solution
 {
 public:
-    bool isAnagram(string s1, string s2)
+    int firstMissingPositive(vector<int> &nums)
     {
-        sort(s1.begin(), s1.end());
-        sort(s2.begin(), s2.end());
-        if (s1 == s2)
+        int n = nums.size();
+
+        for (int i = 0; i < n; i++)
         {
-            return true;
-        }
-        return false;
-    }
-    void groupAnagrams(vector<string> &strs)
-    {
-        vector<set<string>> res;
-        for (int i = 0; i < strs.size(); i++)
-        {
-            set<string> v;
-            for (int j = 0; j < strs.size(); j++)
-            {
-                if (isAnagram(strs[i], strs[j]))
-                {
-                    v.insert(strs[j]);
-                    v.insert(strs[i]);
-                }
-            }
-            res.push_back(v);
+            if (nums[i] <= 0)
+                nums[i] = n + 1;
         }
 
-        for (const auto &row : res)
+        for (int i = 0; i < n; i++)
         {
-            for (const auto &element : row)
-            {
-                std::cout << element << " ";
-            }
-            std::cout << std::endl;
+            if (abs(nums[i]) <= n && nums[abs(nums[i]) - 1] > 0)
+                nums[abs(nums[i]) - 1] *= -1;
         }
+
+        for (int i = 0; i < n; i++)
+        {
+            if (nums[i] > 0)
+                return i + 1;
+        }
+        return n + 1;
     }
 };
 
 int main()
 {
     Solution s;
-    vector<string> strs = {"eat", "tea", "tan", "ate", "nat", "bat"};
-    s.groupAnagrams(strs);
+    vector<int> nums = {0, 1, 2};
+    cout << s.firstMissingPositive(nums);
 }
